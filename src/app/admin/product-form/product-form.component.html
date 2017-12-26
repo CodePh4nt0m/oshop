@@ -3,7 +3,7 @@
         <form #f="ngForm" (ngSubmit)="save(f.value)">
             <div class="form-group">
               <label for="title">Title</label>
-              <input #title="ngModel" [(ngModel)]="product.name" name="title" id="title" type="text" class="form-control" required>
+              <input #title="ngModel" [(ngModel)]="product.title" name="title" id="title" type="text" class="form-control" required>
               <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
                 Title is required.
               </div>
@@ -22,7 +22,8 @@
             <div class="form-group">
                 <label for="category">Category</label>
                 <select #category="ngModel" [(ngModel)]="product.category"name="category" id="category" class="form-control" required>
-                  <option value="1">Vegetables</option>
+                  <option value="">Vegetables</option>
+                  <option *ngFor="let c of categories$ | async" [value]="c.$key">{{c.name}}</option>
                 </select>
                 <div class="alert alert-danger" *ngIf="category.touched && category.invalid">
                     Category is required.
@@ -43,7 +44,7 @@
         <div class="card" style="width: 20rem;">
             <img class="card-img-top" src="{{product.imageUrl}}" *ngIf="product.imageUrl">
             <div class="card-body">
-                <h4 class="card-title">{{ product.name }}</h4>
+                <h4 class="card-title">{{ product.title }}</h4>
                 <p class="card-text">{{ product.price | currency:'USD':true }}</p>
             </div>
           </div>

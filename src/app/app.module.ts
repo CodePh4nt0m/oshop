@@ -27,6 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from './services/user.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { FormsModule } from '@angular/forms';
+import { CategoryService } from './services/category.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
-      { path : '', component : HomeComponent },
+      { path : '', component : ProductsComponent },
       { path : 'products', component : ProductsComponent },
       { path : 'shopping-cart', component : ShoppingCartComponent },
       { path : 'login', component : LoginComponent },
@@ -87,6 +88,7 @@ import { FormsModule } from '@angular/forms';
     AuthService,
     AuthGuard,
     AdminAuthGuard,
+    CategoryService,
     ProductService,
     UserService
   ],

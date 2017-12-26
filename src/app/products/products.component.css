@@ -1,0 +1,13 @@
+.card{
+    margin-bottom: 30px;
+    min-height: 350px;
+}
+
+.card-footer{
+    padding: 0;
+}
+
+.btn-addcart{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
