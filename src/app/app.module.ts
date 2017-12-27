@@ -8,7 +8,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { CustomFormsModule } from 'ng2-validation';
-import { DataTableModule } from 'angular-4-data-table';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -29,6 +28,7 @@ import { UserService } from './services/user.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { FormsModule } from '@angular/forms';
 import { CategoryService } from './services/category.service';
+import { ProductsFilterComponent } from './products-filter/products-filter.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import { CategoryService } from './services/category.service';
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductsFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +52,6 @@ import { CategoryService } from './services/category.service';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     CustomFormsModule,
-    DataTableModule,
     FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
